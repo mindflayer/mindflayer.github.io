@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A layout example that shows off a responsive product landing page.">
+<title>Make America</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<link rel="stylesheet" href="http://purecss.io/combo/1.18.13?/css/layouts/marketing.css">
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+  Array.prototype.randomElement = function () {
+      return this[Math.floor(Math.random() * this.length)]
+  }
+
+  var makeAmerica = [
+    'grilled',
+    'greek',
+    'Grease',
+    'geek',
+    'greed',
+    'brit'
+  ];
+</script>
+</head>
+
+<body>
+  <div class="splash-container">
+    <div class="splash"  id="app">
+      <h1 class="splash-head">{{ message }}</h1>
+    </div>
+  </div>
+  <script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Make America ' + makeAmerica.randomElement() + ' again!'
+    }
+  })
+  </script>
+</body>
+
+</html>
